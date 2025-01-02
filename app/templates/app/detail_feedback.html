@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="feedback-entry">
+      <h2> <a href=>{{feedback.subject}} </a> </h2>
+      <p> {{feedback.homeowner}} </p> <p> {{feedback.feedback_text}} </p>
+       <a href= "{% url 'update_feedback' object.pk %}">Edit Post </a>
+        <a href= "{% url 'delete_feedback' object.pk %}">Delete Post </a>
+
+    </div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+  <h1> Delete Your Feedbacks </h1>
+  <form action="{% url 'delete_feedback' object.pk %}" method="post">
+    {% csrf_token %}
+  <p> Are you sure you want to delete?" {{feedback.title}}
+
+    <input type="submit" value="Confirm">
+
+  </form>
+
+
+
+{% endblock content %}

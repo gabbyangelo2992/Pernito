@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+  <h1> Update Your Feedbacks </h1>
+  <form action="{% url 'update_feedback' object.pk %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="Update">
+
+  </form>
+
+
+
+{% endblock content %}

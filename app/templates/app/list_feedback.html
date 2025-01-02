@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1><a href="{% url 'create_feedback' %}" class="btn btn-primary">New Feedback</a></h1>
+  {% for feedback in feedback_list %}
+
+    <div class="feedback-entry">
+      <h2> <a href="{%url 'detail_feedback' post.pk % "> {{feedback.subject}} </a> </h2>
+      <p> {{feedback.feedback_text}} </p>
+    </div>
+{% endfor %}
+{% endblock content %}
