@@ -1,0 +1,23 @@
+{% extends 'app/base2.html' %}
+{% block content %}
+
+<div class="form-container">
+    <h1>Request a Document</h1>
+
+  <p>Select the type of document you want to request.</p>
+  <form action="{% url 'request_document' %}"method="POST">
+    {% csrf_token %}
+
+    <div class="form-group">
+        {{ form.as_p }}
+      </div>
+    <label>Document Type:</label>
+    <select name="document_type">
+      <option value="Certificate of Residency">Certificate of Residency</option>
+      <option value="Barangay Clearance">Barangay Clearance</option>
+      <option value="Other">Other</option>
+    </select>
+    <button type="submit" class="btn btn-primary">Request</button>
+  </form>
+  </div>
+{% endblock %}

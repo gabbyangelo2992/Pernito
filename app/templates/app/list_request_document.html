@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-4">
+    <h1 class="mb-3">
+        <a href="{% url 'request_document' %}" class="btn btn-primary">Request a Document</a>
+    </h1>
+
+    <div class="document-section">
+        {% for document in documents %}
+            <div class="document-entry card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        <a href="{% url 'update_request_document' documents.pk %}" class="text-primary">{{ document.document_type }}</a>
+                    </h2>
+                    <p class="card-text">Status: {{ document.status }}</p>
+                    <small class="text-muted">
+                        Requested by {{ document.homeowner.username }}
+                    </small>
+                    <div class="mt-3">
+                        <a href="{% url 'update_request_document' document.pk %}" class="btn btn-primary">Edit</a>
+                        <a href="{% url 'delete_request_document' document.pk %}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-muted">You have not requested any documents yet. Be the first to request a document!</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

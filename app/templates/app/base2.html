@@ -12,13 +12,12 @@
 
 
     <div class="navbar">
-        <img class="logo" src="{% static 'images/favicon.ico' %}" alt="Logo">
+    <img class="logo" src="{% static 'images/favicon.ico' %}" alt="Logo">
         <h2 class="nav-title">Springville Gardens HOA Page</h2>
-        <div class="nav-links">
-        <a href="{% url 'home' %}" class="nav-button">Home</a>
-        <a href="{% url 'about' %}" class="nav-button">About</a>
-        <a href="{% url 'contact' %}" class="nav-button">Contact</a>
-        <a href="{% url 'login' %}" class="nav-button">Login</a>
+
+    <div class="nav-links">
+
+        <a href="{% url 'profile' %}" class="nav-button">My Profile</a>
 
     </div>
 </div>
@@ -29,12 +28,8 @@
             <!-- Pages will be inserted here -->
             {% endblock content %}
         </div>
-
     </div>
 
     <script src="{% static 'js/base.js' %}"></script>
-
-
-
 </body>
 </html>

@@ -1,0 +1,19 @@
+{% extends 'app/base2.html' %}
+{% block content %}
+  <h1>Own a Property</h1>
+  <p>Here you can register your property details.</p>
+  <form method="POST">
+    {% csrf_token %}
+    <label>Property Homeowner:</label>
+    <input type="text" name="homeowner" required>
+    <label>Property Type:</label>
+    <select name="property_type">
+      <option value="House">House</option>
+      <option value="Condo">Condo</option>
+      <option value="Lot">Lot</option>
+    </select>
+    <label>Size in Sq. M:</label>
+    <input type="number" name="size" required>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}

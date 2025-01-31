@@ -1,0 +1,11 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+  <h1> Delete Announcement </h1>
+  <form action="{% url 'delete_announcement' object.pk %}" method="post">
+    {% csrf_token %}
+    <p> Are you sure you want to delete "{{ announcement.subject }}"?</p>
+    <input type="submit" value="Confirm">
+  </form>
+{% endblock content %}
+

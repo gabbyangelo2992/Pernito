@@ -1,12 +1,17 @@
-{% extends 'app/base2.html' %}
+{% extends 'app/base.html' %}
 {% load static %}
 {% block content %}
 
+
+<header class="hero">
+    <h1>This is our communities feedbacks!!</h1>
+    <p>Our community has freedom to share their thoughts and suggestions!</p>
+</header>
+
 <div class="container mt-4">
     <h1 class="mb-3">
-        <a href="{% url 'create_feedback' %}" class="btn btn-primary">Share more Feedback</a>
+        <a href="{% url 'login' %}" class="btn btn-primary">Login to share Feedback</a>
     </h1>
-
 
     <div class="feedback-section">
         {% for feedback in feedback_list %}
@@ -20,7 +25,7 @@
                         Posted by {{ feedback.homeowner}}
                         {% if feedback.user %}
                         by {{ feedback.user.username }}
-                        {% endif %}
+                        Posted on {{ feedback.created_at|date:"F j, Y, g:i a" }}                      {% endif %}
                     </small>
                 </div>
             </div>

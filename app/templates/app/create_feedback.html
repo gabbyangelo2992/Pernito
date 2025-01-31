@@ -1,15 +1,16 @@
-{% extends 'app/base.html' %}
+{% extends 'app/base2.html' %}
 {% load static %}
 {% block content %}
-  <h1> Create Feedbacks </h1>
-  <form action="{% url 'create_feedback' %}" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
+  <div class="form-container">
+    <h1>Create Feedback</h1>
+    <form action="{% url 'create_feedback' %}" method="post">
+      {% csrf_token %}
 
-    <input type="submit" value="Save">
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
 
-  </form>
-
-
-
+      <input type="submit" value="Send Concerns" class="btn btn-primary">
+    </form>
+  </div>
 {% endblock content %}

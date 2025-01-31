@@ -1,0 +1,14 @@
+{% extends 'app/base2.html' %}
+{% block content %}
+  <h1>Update Document Request</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <label>Document Type:</label>
+    <select name="document_type">
+      <option value="Certificate of Residency" {% if document.document_type == "Certificate of Residency" %}selected{% endif %}>Certificate of Residency</option>
+      <option value="Barangay Clearance" {% if document.document_type == "Barangay Clearance" %}selected{% endif %}>Barangay Clearance</option>
+      <option value="Other" {% if document.document_type == "Other" %}selected{% endif %}>Other</option>
+    </select>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+{% endblock %}

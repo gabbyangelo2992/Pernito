@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-4">
+    <h1 class="mb-3">
+        <a href="{% url 'create_announcement' %}" class="btn btn-primary">New Announcement</a>
+    </h1>
+
+    <div class="announcement-section">
+        {% for announcement in list_announcement %}
+            <div class="announcement-entry card mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        <a href="{% url 'detail_announcement' announcement.pk %}" class="text-primary">{{ announcement.subject }}</a>
+                    </h2>
+                    <p class="card-text">{{ announcement.content }}</p>
+                    <small class="text-muted">
+
+                        {% if announcement.author %}
+                        by {{ announcement.author.username }}
+                        {% endif %}
+                    </small>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-muted">No announcements yet. Stay tuned!</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

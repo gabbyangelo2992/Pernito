@@ -1,0 +1,15 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="announcement-entry">
+      <h2> <a href=>{{announcement.subject}} </a> </h2>
+      <p> {{announcement.homeowner}} </p> <p> {{announcement.content}} </p>
+       <a href= "{% url 'update_announcement' object.pk %}">Edit Post </a>
+        <a href= "{% url 'delete_announcement' object.pk %}">Delete Post </a>
+
+    </div>
+
+
+
+{% endblock content %}

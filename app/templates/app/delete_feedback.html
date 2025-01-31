@@ -1,15 +1,23 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block content %}
-  <h1> Delete Your Feedbacks </h1>
-  <form action="{% url 'delete_feedback' object.pk %}" method="post">
-    {% csrf_token %}
-  <p> Are you sure you want to delete?" {{feedback.title}}
 
-    <input type="submit" value="Confirm">
+  <div class="container-fluid min-vh-100 d-flex justify-content-center" style="margin-top: 100px;">
+    <div class="col-md-6">
+      <div class="card p-4 shadow-lg" style="width: 100%; max-width: 500px; border-radius: 10px;">
 
-  </form>
+        <h1 class="text-center mb-4">Delete Your Feedback</h1>
+        <form action="{% url 'delete_feedback' object.pk %}" method="post">
+          {% csrf_token %}
+          <p class="text-center">Are you sure you want to delete "{{ feedback.title }}"?</p>
 
+          <div class="text-center">
+            <input type="submit" value="Confirm" class="btn btn-danger">
+          </div>
+        </form>
 
+      </div>
+    </div>
+  </div>
 
 {% endblock content %}

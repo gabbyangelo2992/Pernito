@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+  <div class="form-container">
+    <h1>Create Announcement</h1>
+    <form action="{% url 'create_announcement' %}" method="post">
+      {% csrf_token %}
+
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
+
+      <input type="submit" value="Post Announcement" class="btn btn-primary">
+    </form>
+  </div>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends 'app/base2.html' %}
+{% block content %}
+  <h1>Delete Document Request</h1>
+  <p>Are you sure you want to delete the "{{ document.document_type }}" document request?</p>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+  </form>
+  <a href="{% url 'list_request_document' %}" class="btn btn-secondary">Cancel</a>
+{% endblock %}

@@ -123,3 +123,13 @@ STATICFILES_DIRS = [BASE_DIR/'static']
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://yourdomain.com',
+]
+
+LOGIN_REDIRECT_URL = '/profile/'
+
+LOGIN_URL = '/login/'

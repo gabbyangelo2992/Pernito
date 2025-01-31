@@ -1,5 +1,43 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block content %}
-  <h1>This is the Home Page</h1>
+
+<header class="hero">
+    <h1>Welcome to Springville Gardens Homeowners Association!</h1>
+    <p>Working together for a safe, secure, and thriving community.</p>
+    <a href="{% url 'about' %}" class="cta-button">Learn More</a>
+</header>
+
+<section class="features">
+    <div class="feature">
+        <h2>Community Announcements</h2>
+        <p>Stay informed with the latest announcements, events, and important notices.</p>
+        <a href="{% url 'list_announcement' %}" class="feature-button">View Updates</a>
+    </div>
+    <div class="feature">
+        <h2>Be A Homeowner</h2>
+        <p>Stay informed, get involved, and take pride in your home as it grows with you.</p>
+        <a href="{% url 'register' %}" class="feature-button">Sign Up Now!</a>
+    </div>
+      <div class="feature">
+        <h2>Request Documents?</h2>
+        <p>You can request documents now via online!</p>
+        <a href="{% url 'register' %}" class="feature-button">Request Now!</a>
+    </div>
+      <div class="feature">
+        <h2>Own A Property?</h2>
+        <p>Own A Property here in Springville Gardens!</p>
+        <a href="{% url 'register' %}" class="feature-button">Own a Property Now!</a>
+    </div>
+     <div class="feature">
+        <h2>Feedbacks</h2>
+        <p>Stay informed with the latest feedbacks from your neighbors.</p>
+        <a href="{% url 'list_feedbackmain' %}" class="feature-button">View Feedbacks</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2025 Springville Gardens Homeowners Association. All rights reserved.</p>
+</footer>
+
 {% endblock content %}

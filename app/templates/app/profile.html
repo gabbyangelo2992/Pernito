@@ -1,0 +1,75 @@
+{% extends 'app/base2.html' %}
+
+{% block content %}
+<h1>Dashboard</h1>
+  <div class="dashboard-box">
+
+    <h1>Welcome, {{ user.username }}!</h1>
+    <h2>What do you want to do today?</h2>
+
+    <a href="{% url 'own_property' %}" class="btn btn-primary">Own a Property</a>
+    <a href="{% url 'request_document' %}" class="btn btn-primary">Request Documents</a>
+    <a href="{% url 'create_feedback' %}" class="btn btn-primary">Create Feedback</a>
+    <a href="{% url 'logout' %}" class="btn-danger">Logout</a>
+  </div>
+
+ <div class="feedback-table-container">
+    <h3>Your Feedbacks</h3>
+    <table class="feedback-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Feedback Text</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for feedback in list_feedback %}
+          <tr>
+            <td>{{ feedback.homeowner}}</td>
+            <td>{{ feedback.subject }}</td>
+            <td>{{ feedback.feedback_text }}</td>
+            <td>
+              <a href="{% url 'update_feedback' feedback.id %}" class="btn btn-primary">Edit</a>
+              <a href="{% url 'delete_feedback' feedback.id %}" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+<div class="document-table-container">
+    <h3>Your Requested Documents</h3>
+    <table class="document-table">
+        <thead>
+            <tr>
+                <th>Homeowner</th>
+                <th>Document Type</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for document in list_request_documents %}
+                <tr>
+                    <td>{{ document.homeowner }}</td>
+                    <td>{{ document.document_type }}</td>
+                    <td>{{ document.status }}</td>
+                    <td>
+                        <a href="{% url 'update_request_document' document.id %}" class="btn-primary">Edit</a>
+                        <a href="{% url 'delete_request_document' document.id %}" class="btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No documents found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

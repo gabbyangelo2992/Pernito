@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -8,9 +9,11 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: Arial, sans-serif;
+    font-family: Calibri, sans-serif;
+    background-color: lightslategray;
 }
 
+/* Header */
 .header {
     justify-content: center;
     align-content: center;
@@ -19,44 +22,625 @@ body, html {
     width: 100%;
 }
 
+/* Container */
 .container {
     display: flex;
-    background-color: rgb(219, 194, 194);
     height: calc(100% - 100px);
     width: 100%;
 }
 
-
 .contents {
-    flex: 85%;
-    justify-content: top;
-    align-content: top;
+    flex: 100%;
     text-align: center;
-    background-color: rgb(230, 236, 195);
     height: 100%;
-    padding: 10px;
 }
 
-
-.nav-button {
-    float: right;
-    background-color: #dbcd00;
-    color: white;
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
+    background-color: darkblue;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+.nav-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-right: 100px; /* Ensures it's positioned at the left */
+    text-align: left; /* Explicit left alignment */
+    flex-grow: 1; /* Pushes everything else to the right */
+}
+
+.nav-links {
+    margin-left: auto; /* Moves profile link to the right */
+}
+.nav-button {
     text-decoration: none;
-    border: none;
-    border-radius: 15px;
-    margin: 4px 2px;
-    cursor: pointer;
+    color: black;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: gold;
+    transition: background 0.3s ease;
 }
 
 .nav-button:hover {
-    background-color: #0f0044;
+    background-color: darkgoldenrod;
 }
 
-.Logo{
-    height: 50px;
-    width: 50px;
+/* Hero Section */
+.hero {
+    background-color: darkgreen;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e68900;
+}
+
+/* Community Updates Box */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom */
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Ensures equal height for all boxes */
+
+}
+
+.feature h2 {
+    margin-bottom: 10px;
+}
+
+.feature p {
+    flex-grow: 10; /* Makes sure the text area expands, pushing button down */
+}
+
+.feature-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.feature-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+/* Feedback Section */
+.feedback-section {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.feedback-entry {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.feedback-entry:hover {
+    transform: scale(1.02);
+}
+
+.feedback-entry h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feedback-entry h2 a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.feedback-entry h2 a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.feedback-entry p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.feedback-entry small {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.announcement-section {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.announcement-entry {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.announcement-entry:hover {
+    transform: scale(1.02);
+}
+
+.announcement-entry h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.announcement-entry h2 a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.announcement-entry h2 a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.announcement-entry p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.announcement-entry small {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+
+
+.btn-danger {
+    background-color: darkred;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btn-danger:hover {
+    background-color: red;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* About Page Styling */
+.about-hero {
+    background-color: darkgreen;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 40px;
+}
+
+.about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.about-section {
+    padding: 20px;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.about-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.about-text p, .about-text ul {
+    font-size: 1.1rem;
+}
+
+.about-text ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.about-text li {
+    margin-bottom: 10px;
+}
+
+/* Form Styling */
+.card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: black;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.alert-success {
+    margin-bottom: 1.5rem;
+}
+
+p a {
+    color: #007bff;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Full Height Container */
+.container-fluid {
+    height: 100vh;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.vh-100 {
+    height: 100vh;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* Card Styles */
+.card {
+    width: 100%;
+    max-width: 500px;  
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Box */
+.dashboard-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.dashboard-box h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.dashboard-box p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.dashboard-box a {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #007bff;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+/* Form Container */
+.form-container {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.form-container h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-group input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+}
+
+/* Feedback Table */
+.feedback-table-container {
+
+    margin-top: 40px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+
+
+}
+
+.feedback-table-container h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.feedback-table th, .feedback-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.feedback-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.feedback-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.document-table-container {
+
+    margin-top: 40px;
+    margin: 20px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+
+}
+
+.document-table-container h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.document-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.document-table th, .feedback-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.document-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.document-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Text Danger */
+.text-danger p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.text-center a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.text-justify {
+    color: darkred;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: justify;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+
+.proceed-btn {
+    display: inline-block;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #ffffff; /* White text */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.proceed-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.proceed-btn:active {
+    background-color: #00408d; /* Even darker when clicked */
+    transform: scale(0.98); /* Slight press effect */
 }
